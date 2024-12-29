@@ -1,0 +1,798 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>The Republic Nepal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+ <link href="https://fonts.googleapis.com/css2?family=Jokerman&display=swap" rel="stylesheet">
+    <style>
+        /* Custom notification styles */
+        .custom-notification {
+            position: fixed;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            display: none;
+        }
+ body {
+            font-family: 'Roboto', sans-serif;
+        }
+    @keyframes glow {
+    0% { box-shadow: 0 0 20px #ff0000; border-color: #ff0000; }
+    8.3% { box-shadow: 0 0 20px #ffa500; border-color: #ffa500; }
+    16.6% { box-shadow: 0 0 20px #ffff00; border-color: #ffff00; }
+    25% { box-shadow: 0 0 20px #00ff00; border-color: #00ff00; }
+    33.3% { box-shadow: 0 0 20px #00ffff; border-color: #00ffff; }
+    41.6% { box-shadow: 0 0 20px #0000ff; border-color: #0000ff; }
+    50% { box-shadow: 0 0 20px #8a2be2; border-color: #8a2be2; }
+    58.3% { box-shadow: 0 0 20px #ff69b4; border-color: #ff69b4; }
+    66.6% { box-shadow: 0 0 20px #ff1493; border-color: #ff1493; }
+    75% { box-shadow: 0 0 20px #ff4500; border-color: #ff4500; }
+    83.3% { box-shadow: 0 0 20px #1e90ff; border-color: #1e90ff; }
+    100% { box-shadow: 0 0 20px #ff0000; border-color: #ff0000; }
+}
+
+#birthday-message {
+    animation: glow 39.6s infinite;
+}
+
+#close-button {
+    animation: glow 39.6s infinite;
+}
+ header {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Neon Line Animation */
+  .neon-line {
+    height: 4px;
+    background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+    background-size: 200%;
+    animation: neon 2s linear infinite;
+    border-radius: 4px;
+  }
+
+  /* Hide Neon Line on PCs */
+  @media (min-width: 769px) {
+    .neon-line {
+      display: none;
+    }
+  }
+
+  /* Responsive adjustments for mobile */
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+      text-align: center;
+    }
+
+.note-heading { color: red; font-size: 2rem; font-weight: bold; margin-bottom: 1rem; position: relative; display: inline-block; padding: 10px; overflow: hidden; } .note-heading::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 255, 0, 0.2); z-index: -1; border-radius: 8px; animation: greenGases 2s infinite alternate; } @keyframes greenGases { 0% { opacity: 0.2; transform: scale(1); } 100% { opacity: 1; transform: scale(1.05); } }
+
+    </style>
+  </head>
+  <body class="font-roboto bg-gray-100">
+  <header class="bg-purple-900 text-white p-4">
+  <div class="container mx-auto flex flex-wrap justify-between items-center">
+    <h1 class="text-2xl lg:text-3xl font-bold mb-2 lg:mb-0 w-full text-center lg:w-auto lg:text-left">
+      The Republic Nepal
+    </h1>
+    <!-- Neon Line -->
+    <div class="neon-line mx-auto w-full lg:w-1/2 my-2"></div>
+    <nav class="w-full lg:w-auto">
+      <ul class="flex flex-wrap justify-center lg:justify-end space-x-2 lg:space-x-4">
+        <li>
+          <a class="content-section hover:underline px-4 py-2 bg-blue-700 rounded-lg text-sm lg:text-base hover:bg-blue-600 transition-all"
+            href="#homeSection">Home</a>
+        </li>
+        <li>
+          <a class="content-section hover:underline px-4 py-2 bg-green-700 rounded-lg text-sm lg:text-base hover:bg-green-600 transition-all"
+            href="#aboutSection">About</a>
+        </li>
+        <li>
+          <a class="content-section hover:underline px-4 py-2 bg-red-700 rounded-lg text-sm lg:text-base hover:bg-red-600 transition-all"
+            href="#newsSection">Note</a>
+        </li>
+        <li>
+          <a class="content-section hover:underline px-4 py-2 bg-yellow-700 rounded-lg text-sm lg:text-base hover:bg-yellow-600 transition-all"
+            href="#contactSection">Contact</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+
+    <main class="container mx-auto mt-8 p-4">
+      <!-- Home Section -->
+      <section id="homeSection" class="text-center mb-8">
+        <h2 class="text-2xl font-bold mb-4">Join The Republic Nepal WhatsApp Group</h2>
+        <button class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600" id="joinButton">
+          <i class="fab fa-whatsapp"></i> Join WhatsApp Group
+        </button>
+       <b> <p class="mt-4 text-lg hidden" id="welcomeMessage">Welcome to Republic Fans Group!</p></b>
+      </section>
+
+ <!-- About Section -->
+    <!-- About Section -->
+    <section id="aboutSection" class="text-center mb-8">
+        <div class="relative">
+            <div class="bg-white py-6 mt-8">
+                <h2 class="text-2xl font-bold mb-4">About Us</h2>
+             <p class="mb-4">
+    <b>Welcome to</b>
+    <a href="mailto:officialtherepublicnepali@example.com" class="text-red-600 font-bold" target="_blank">@officialtherepublicnepali</a>
+    <b>website!</b>
+</p>
+
+
+                <!-- Container to align ATM and Others buttons side by side -->
+                <div class="mt-6 text-center flex justify-center items-center space-x-4">
+                    <!-- ATM Button -->
+                    <button class="bg-blue-500 text-white font-bold py-1 px-4 rounded-full text-sm hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400" id="atmButton">
+                        ATM
+                    </button>
+
+                    <!-- Others Button (Positioned to the right of ATM button) -->
+                    <div class="relative">
+                        <button class="bg-green-500 text-white font-bold py-1 px-4 rounded-full text-sm hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-400" id="othersButton">
+                            Others
+                        </button>
+                        <div class="relative">
+                            <!-- Dropdown Container -->
+                            <div id="dropdownMenu" class="dropdown-content hidden absolute bg-white shadow-lg rounded-lg mt-1 right-0 w-48 z-10">
+                                <a href="#" id="followUsLink" class="block text-black px-4 py-2 text-sm hover:bg-gray-200">Follow Us</a>
+                                <a href="#" id="loginLink" class="block text-black px-4 py-2 text-sm hover:bg-gray-200">Login</a>
+                                <a href="#" id="festivalLink" class="block text-black px-4 py-2 text-sm hover:bg-gray-200">Festival</a>
+                                <a href="#" id="developerLink" class="block text-black px-4 py-2 text-sm hover:bg-gray-200">Developer</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social Media Icons -->
+                <div id="socialMediaIcons" class="hidden mt-4 flex justify-center space-x-4">
+                    <a href="https://wa.me/1234567890" target="_blank" class="text-green-500 text-3xl hover:text-green-600"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://www.linkedin.com/in/abhishek-rajbanshi-621ba228b/" target="_blank" class="text-blue-700 text-3xl hover:text-blue-800"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://twitter.com/username" target="_blank" class="text-blue-500 text-3xl hover:text-blue-600"><i class="fab fa-twitter"></i></a>
+                    <a href="https://facebook.com/username" target="_blank" class="text-blue-600 text-3xl hover:text-blue-700"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Table Section -->
+    <div id="atmTable" class="mt-8 hidden w-11/12 sm:w-9/12 md:w-7/12 lg:w-5/12 mx-auto relative">
+        <!-- Close Button -->
+        <button id="closeTable" class="absolute top-0 right-0 text-red-600 text-2xl mt-2 mr-2 hover:text-red-800 transition">×</button>
+
+        <!-- Table -->
+        <center><b><font color="red">Contact If we need ATM</font></b></center>
+        <table class="min-w-full table-auto border-collapse border border-gray-200 shadow-lg rounded-lg overflow-hidden text-sm">
+            <thead>
+                <tr class="bg-indigo-600 text-white">
+                    <th class="border border-gray-300 px-4 py-2">Name</th>
+                    <th class="border border-gray-300 px-4 py-2">Ph/Wh</th>
+                    <th class="border border-gray-300 px-4 py-2">ATM</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="hover:bg-gray-100">
+                    <td class="border border-gray-300 px-4 py-2">Summit Kalwar</td>
+                    <td class="border border-gray-300 px-4 py-2">7569293114</td>
+                    <td class="border border-gray-300 px-4 py-2">NMB</td>
+                </tr>
+                <tr class="hover:bg-gray-100">
+                    <td class="border border-gray-300 px-4 py-2">Samir Chau</td>
+                    <td class="border border-gray-300 px-4 py-2">+9779811108538</td>
+                    <td class="border border-gray-300 px-4 py-2">NMB</td>
+                </tr>
+                <tr class="hover:bg-gray-100">
+                    <td class="border border-gray-300 px-4 py-2">Anurag Gupta</td>
+                    <td class="border border-gray-300 px-4 py-2">8294219305</td>
+                    <td class="border border-gray-300 px-4 py-2">NMB</td>
+                </tr>
+                <tr class="hover:bg-gray-100">
+                    <td class="border border-gray-300 px-4 py-2">Dipendra Gaderi</td>
+                    <td class="border border-gray-300 px-4 py-2">8826547741</td>
+                    <td class="border border-gray-300 px-4 py-2">NMB / ISBI</td>
+                </tr>
+                <tr class="hover:bg-gray-100">
+                    <td class="border border-gray-300 px-4 py-2">Sombabu Patel</td>
+                    <td class="border border-gray-300 px-4 py-2">8210787484</td>
+                    <td class="border border-gray-300 px-4 py-2">NSBI</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Login Form -->
+    <div id="loginForm" class="hidden mt-4 w-11/12 sm:w-8/12 md:w-6/12 lg:w-4/12 mx-auto bg-sky-500 p-3 rounded-lg shadow-lg">
+        <h2 class="text-2xl font-bold mb-3">Login</h2>
+        <form id="loginFormElement">
+            <div class="mb-3">
+                <label for="fullName" class="block text-gray-700 text-sm font-bold mb-1">Full Name</label>
+                <input type="text" id="fullName" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Full Name" required>
+            </div>
+            <div class="mb-3">
+                <label for="phone" class="block text-gray-700 text-sm font-bold mb-1">Phone No</label>
+                <input type="text" id="phone" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Phone No" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="block text-gray-700 text-sm font-bold mb-1">Email</label>
+                <input type="email" id="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Email" required>
+            </div>
+            <div class="mb-3">
+                <label for="photo" class="block text-gray-700 text-sm font-bold mb-1">Upload Photo</label>
+                <input type="file" id="photo" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="block text-gray-700 text-sm font-bold mb-1">Password</label>
+                <input type="password" id="password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Password" required>
+            </div>
+            <div class="mb-3">
+                <label for="repassword" class="block text-gray-700 text-sm font-bold mb-1">Re-enter Password</label>
+                <input type="password" id="repassword" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Re-enter Password" required>
+            </div>
+            <div class="flex items-center justify-between">
+                <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                    Login
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Festival Section -->
+    <div id="festivalSection" class="hidden mt-8 w-11/12 sm:w-8/12 md:w-6/12 lg:w-4/12 mx-auto bg-white p-4 rounded-lg shadow-lg relative">
+        <button id="closeFestival" class="absolute top-0 right-0 bg-red-600 text-white border-none rounded-full cursor-pointer text-sm w-6 h-6 shadow-lg">X</button>
+        <h2 class="text-2xl font-bold mb-4">Festivals</h2>
+        <div class="grid grid-cols-2 gap-4 text-sm">
+            <div class="mb-2"><b class="text-red-500">Makara Sankranti:</b> <span class="text-green-500">Janauary 14</span></div>
+            <div class="mb-2"><b class="text-red-500">Pongal:</b> <span class="text-green-500">Janauary 14</span></div>
+            <div class="mb-2"><b class="text-red-500">Vasant Panchami:</b> <span class="text-green-500">February 2</span></div>
+            <div class="mb-2"><b class="text-red-500">Maha Shivratri:</b> <span class="text-green-500">February 26</span></div>
+            <div class="mb-2"><b class="text-red-500">Holi:</b> <span class="text-green-500">March 14</span></div>
+            <div class="mb-2"><b class="text-red-500">Jamat UI-veda:</b> <span class="text-green-500">March 28</span></div>
+            <div class="mb-2"><b class="text-red-500">Eid al-Fitr (Ramadan):</b> <span class="text-green-500">March 31</span></div>
+            <div class="mb-2"><b class="text-red-500">Rama Navami:</b> <span class="text-green-500">April 6</span></div>
+            <div class="mb-2"><b class="text-red-500">Mother's Day:</b> <span class="text-green-500">May 11</span></div>
+            <div class="mb-2"><b class="text-red-500">Buddha Purnima:</b> <span class="text-green-500">May 12</span></div>
+            <div class="mb-2"><b class="text-red-500">Bakrid:</b> <span class="text-green-500">June 7</span></div>
+            <div class="mb-2"><b class="text-red-500">Father's Day:</b> <span class="text-green-500">June 15</span></div>
+
+            <div class="mb-2"><b class="text-red-500">Moharam:</b> <span class="text-green-500">July 6</span></div>
+
+            <div class="mb-2"><b class="text-red-500">Guru Purnima:</b> <span class="text-green-500">July 10</span></div>
+
+            <div class="mb-2"><b class="text-red-500">Raksha Bandhan:</b> <span class="text-green-500">August 9</span></div>
+
+            <div class="mb-2"><b class="text-red-500">Janma Ashtami:</b> <span class="text-green-500">August 15-16</span></div>
+
+            <div class="mb-2"><b class="text-red-500">Maha Navami:</b> <span class="text-green-500">September 30</span></div>
+ <div class="mb-2"><b class="text-red-500">Dashain :</b> <span class="text-green-500">October 1</span></div>
+         <div class="mb-2"><b class="text-red-500">Lakshmi Puja(Diwali):</b> <span class="text-green-500">October 20</span></div>
+         <div class="mb-2"><b class="text-red-500">Chhath:</b> <span class="text-green-500">October 27</span></div>
+         <div class="mb-2"><b class="text-red-500">Merry Christmas:</b> <span class="text-green-500">December 25</span></div>
+
+        </div>
+    </div>
+
+    <!-- Developer Section -->
+    <div id="developerSection" class="hidden mt-8 w-11/12 sm:w-8/12 md:w-6/12 lg:w-4/12 mx-auto bg-yellow-500 p-4 rounded-lg shadow-lg relative">
+        <button id="closeDeveloper" class="absolute top-0 right-0 bg-red-600 text-white border-none rounded-full cursor-pointer text-sm w-6 h-6 shadow-lg">X</button>
+        <p class="font-bold text-center text-lg" style="font-family: 'Jokerman', cursive;">
+            यो वेबसाइट अभिषेक राजबंशी द्वारा विकास गरिएको हो, तेस्रो वर्ष बीटेक इन्जिनियर, नेपालबाट। मेरो रुचि सफ्टवेयर र वेबसाइट विकास गर्नु हो। यदि तपाईलाई यसमा कुनै समायोजन आवश्यक छ भने, कृपया मलाई ९८२४३८०८९६ मा सम्पर्क गर्नुहोस्। यदि तपाई वेबसाइट बनाउन चाहनुहुन्छ भने, मलाई यो इमेलमा मेल गर्नुहोस् - abhishekrajbanshi999@gmail.com। <span id="aiText" class="text-red-500">Sorry for this half half Nepali because I don't know to type Nepali so AI create it.</span>
+        </p>
+    </div>
+
+    <!-- Marquee Section -->
+    <div class="bg-yellow-300 py-4">
+      <marquee class="text-red-600 font-bold">समूहमा स्वागत छ! यहाँ अभिव्यक्तिको स्वतन्त्रता छ, तपाईंले मद्दत र जानकारीको लागि सोध्न सक्नुहुन्छ मानिसहरूले तपाईंलाई व्यक्तिगत रूपमा सम्पर्क गर्छ!!!!Tapaii ko khyal hame rakhane raxu dhukka rahanu hos college ma</marquee>
+    </div>
+  </div>
+</section>
+
+<img src="neps.jpeg" alt="Nepal Flag" class="w-full md:w-1/4 h-auto object-cover mx-auto" />
+
+
+<!-- News Section -->
+<section id="newsSection" class="mt-6">
+ <h2 class="note-heading">Note This Point</h2>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img
+            alt="A detailed description of a stack of money"
+            class="w-full h-48 object-cover rounded mb-4"
+            height="400"
+            src="no.jpeg"
+            width="600"
+          />
+          <h3 class="text-xl font-bold mb-2">Free To Ask</h3>
+        </div>
+        <div class="flip-card-back">
+          <b>
+            <p class="text-purple-700">
+              यहाँ कुनै नियम छैन, तपाईं आफ्नो समस्या र खुशीहरू साझा गर्न सक्नुहुन्छ,
+              तर अनुशासनमा रहनुहोस्।
+            </p>
+          </b>
+        </div>
+      </div>
+    </div>
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img
+            alt="News Image"
+            class="w-full h-48 object-cover rounded mb-4"
+            height="400"
+            src="241.jpeg"
+            width="600"
+          />
+          <h3 class="text-xl font-bold mb-2">24 * 7 services</h3>
+        </div>
+        <div class="flip-card-back">
+          <b>
+            <p class="text-purple-700">
+              तपाईँहरूलाई केही समस्या परे यो समूहमा सन्देश गर्नुहोस्। २४/७ खुला
+              रहनेछ र सबै जना तयार रहनेछन् सहयोग गर्न।
+            </p>
+          </b>
+        </div>
+      </div>
+    </div>
+    <!-- Add more news items here -->
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img
+            alt="News Image"
+            class="w-full h-48 object-cover rounded mb-4"
+            height="400"
+            src="boo.jpeg"
+            width="600"
+          />
+          <h3 class="text-xl font-bold mb-2">Ask any Questions</h3>
+        </div>
+        <div class="flip-card-back">
+          <b>
+            <p class="text-purple-700">
+              खाली पैसाको कारोबार पनि ठीक हुँदैन, पढाइमा पनि ध्यान दिनुहोस्।
+            </p>
+          </b>
+        </div>
+      </div>
+    </div>
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img
+            alt="News Image"
+            class="w-full h-48 object-cover rounded mb-4"
+            height="400"
+            src="ic.jpeg"
+            width="600"
+          />
+          <h3 class="text-xl font-bold mb-2">Exchange with All</h3>
+        </div>
+        <div class="flip-card-back">
+          <b>
+            <p class="text-purple-700">
+              आईसी देखि नेपाली र नेपाली देखि आईसी रूपान्तरण हुनेछ र साथै एटीएमको
+              व्यवस्था पनि उपलब्ध छ यहाँ, ढुक्क बस्नुहोस्।
+            </p>
+          </b>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<br><br>
+<center>
+
+<center>
+  <b style="font-size: 24px; color: #FF0000; 
+            text-shadow: 0 0 5px #FFFF00, 0 0 10px #FFFF00, 
+                         0 0 20px #FFFF00, 0 0 40px #FFFF00; 
+            animation: glow 1.5s infinite alternate;">
+    Fast and Secure Converter
+  </b>
+</center>
+    <div id="converter" class="bg-blue-300 w-full max-w-xs p-3 rounded-lg shadow-lg relative">
+        <button onclick="hideConverter()" class="absolute top-2 right-2 text-gray-800 hover:text-gray-600">
+            <i class="fas fa-times"></i>
+        </button>
+        <h2 class="text-center text-xl font-semibold text-gray-800 mb-3">Currency Converter</h2>
+        
+        <div class="mb-3">
+            <label for="amount" class="block text-gray-700 font-medium mb-1">Enter Amount</label>
+            <input type="number" id="amount" placeholder="Enter Amount" required class="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+        </div>
+
+        <div class="mb-3">
+            <label for="convertFrom" class="block text-gray-700 font-medium mb-1">Convert From</label>
+            <select id="convertFrom" class="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                <option value="nepali">Nepali Rupees</option>
+                <option value="ic">IC</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="convertTo" class="block text-gray-700 font-medium mb-1">Convert To</label>
+            <select id="convertTo" class="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                <option value="ic">IC</option>
+                <option value="nepali">Nepali Rupees</option>
+            </select>
+        </div>
+
+        <button onclick="convertCurrency()" class="w-full bg-green-500 text-white p-2 rounded-lg hover:bg-green-600 transition duration-300">Exchanger</button>
+
+       <div class="result mt-3 text-center text-lg font-semibold hidden" id="result" style="color: red;"></div>
+
+    </div></center>
+
+</section>
+
+
+
+
+
+<center>
+      <!-- Contact Section -->
+      <section id="contactSection" class="mt-6">
+        <h2 class="text-2xl font-bold mb-4">Contact Us</h2>
+        <p><b>If you have any questions or suggestions, feel free to reach out!</p></b>
+       <b> <p class="mt-4">Fill out the form below to contact us:</p></b>
+        <!-- Contact Form Link -->
+        <div class="mt-4">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSfYnCHhugr6Oz46JpRNEWnrtrnl0St90d_-_yJcMEro6Ozmcw/viewform?usp=sharing" target="_blank" class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700">
+            Go to Contact Form
+          </a>
+        </div>
+      </section>
+    </main>
+
+
+
+<div class="custom-notification" id="custom-notification">
+    </div>
+
+<center>
+   <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-8 px-4 md:px-0">
+   <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+    <div>
+     <h3 class="text-xl font-semibold mb-4">
+      About Us
+     </h3>
+     <p class="text-gray-400">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+     </p>
+    </div>
+    <div>
+     <h3 class="text-xl font-semibold mb-4">
+      Customer Service
+     </h3>
+     <ul class="space-y-2">
+      <li>
+       <a class="hover:text-gray-400" href="#">
+        Help Center
+       </a>
+      </li>
+      <li>
+       <a class="hover:text-gray-400" href="#">
+        Returns
+       </a>
+      </li>
+      <li>
+       <a class="hover:text-gray-400" href="#">
+        Shipping
+       </a>
+      </li>
+      <li>
+       <a class="hover:text-gray-400" href="#">
+        Track Order
+       </a>
+      </li>
+     </ul>
+    </div>
+    <div>
+     <h3 class="text-xl font-semibold mb-4">
+      Quick Links
+     </h3>
+     <ul class="space-y-2">
+      <li>
+       <a class="hover:text-gray-400" href="#">
+        Home
+       </a>
+      </li>
+      <li>
+       <a class="hover:text-gray-400" href="#">
+        Categories
+       </a>
+      </li>
+      <li>
+       <a class="hover:text-gray-400" href="#">
+        Deals
+       </a>
+      </li>
+      <li>
+       <a class="hover:text-gray-400" href="#">
+        Contact
+       </a>
+      </li>
+     </ul>
+    </div>
+    <div>
+     <h3 class="text-xl font-semibold mb-4">
+      Follow Us
+     </h3>
+     <div class="flex space-x-4">
+      <a class="hover:text-gray-400" href="#">
+       <i class="fab fa-facebook-f">
+       </i>
+      </a>
+      <a class="hover:text-gray-400" href="#">
+       <i class="fab fa-twitter">
+       </i>
+      </a>
+      <a class="hover:text-gray-400" href="#">
+       <i class="fab fa-instagram">
+       </i>
+      </a>
+      <a class="hover:text-gray-400" href="#">
+       <i class="fab fa-linkedin-in">
+       </i>
+      </a>
+     </div>
+    </div>
+   </div>
+   <div class="text-center mt-8 text-gray-400">
+    © 2023 Alibaba Clone. All rights reserved.
+   </div>
+  </footer>
+
+
+
+
+    <script>
+
+
+
+      document.getElementById('joinButton').addEventListener('click', function() {
+        document.getElementById('welcomeMessage').classList.remove('hidden');
+        window.location.href = 'https://chat.whatsapp.com/CHR6eOyBEF1EgHzZ4wDovU';
+      });
+
+
+ const atmButton = document.getElementById('atmButton');
+  const atmTable = document.getElementById('atmTable');
+  const closeTable = document.getElementById('closeTable');
+
+  atmButton.addEventListener('click', () => {
+    atmTable.classList.toggle('hidden'); // Toggle table visibility
+  });
+
+  closeTable.addEventListener('click', () => {
+    atmTable.classList.add('hidden'); // Hide the table when the close button is clicked
+  });
+
+
+
+
+
+
+
+
+  // Function to show a custom notification
+        function showNotification() {
+            console.log("Attempting to show notification...");
+
+            // Check if the browser supports notifications
+            if ("Notification" in window) {
+                console.log("Notification API supported");
+
+                // Check if the user has already granted permission for notifications
+                if (Notification.permission === "granted") {
+                    console.log("Permission granted, showing notification");
+                    // Show native notification (no styling for background or text)
+                    new Notification("@ यो अभिषेक राजवंशी द्वारा विकास गरिएको हो !🇳🇵❤️!रिपब्लिक नेपाल ग्रुपमा स्वागत छ।   ");
+
+                    // Show custom notification on the page
+                    const notification = document.getElementById("custom-notification");
+                    notification.style.display = "block";
+
+                    // Hide custom notification after 5 seconds
+                    setTimeout(() => {
+                        notification.style.display = "none";
+                    }, 5000);
+                } else if (Notification.permission === "default") {
+                    console.log("Requesting permission...");
+                    // Ask for permission to show notifications
+                    Notification.requestPermission().then(permission => {
+                        if (permission === "granted") {
+                            console.log("Permission granted after request");
+                            new Notification("@ यो अभिषेक राजवंशी द्वारा विकास गरिएको हो !🇳🇵❤️!रिपब्लिक नेपाल ग्रुपमा स्वागत छ। " );
+
+                            // Show custom notification on the page
+                            const notification = document.getElementById("custom-notification");
+                            notification.style.display = "block";
+
+                            // Hide custom notification after 5 seconds
+                            setTimeout(() => {
+                                notification.style.display = "none";
+                            }, 5000);
+                        } else {
+                            console.log("Permission denied after request");
+                        }
+                    });
+                } else {
+                    console.log("Permission denied permanently");
+                }
+            } else {
+                console.log("Your browser does not support notifications.");
+                alert("Your browser does not support notifications.");
+            }
+        }
+
+        // Show notification after 5 seconds
+        window.onload = () => {
+            console.log("Page loaded, waiting for 5 seconds...");
+            setTimeout(showNotification, 5000); // 5000 milliseconds = 5 seconds
+        };
+
+
+
+  function convertCurrency() {
+            const amount = document.getElementById("amount").value;
+            const convertFrom = document.getElementById("convertFrom").value;
+            const convertTo = document.getElementById("convertTo").value;
+            let result = 0;
+
+            if (amount === "" || amount <= 0) {
+                alert("Please enter a valid amount.");
+                return;
+            }
+
+            if (convertFrom === convertTo) {
+                document.getElementById("result").innerText = "No conversion needed.";
+                document.getElementById("result").classList.remove("text-green-500");
+                document.getElementById("result").classList.add("text-gray-800");
+                document.getElementById("result").classList.remove("hidden");
+                return;
+            }
+
+            if (convertFrom === "nepali" && convertTo === "ic") {
+                if (amount <= 100000 && amount >= 1) {
+                    result = (amount * 0.625).toFixed(2); // 1 Nepali Rupee = 0.625 IC
+                } else {
+                    alert("Amount exceeds the limit (max 100,000 NPR).");
+                    return;
+                }
+            } else if (convertFrom === "ic" && convertTo === "nepali") {
+                if (amount <= 50000 && amount >= 1) {
+                    result = (amount * 1.6).toFixed(2); // 1 IC = 1.6 Nepali
+                } else {
+                    alert("Amount exceeds the limit (max 50,000 IC).");
+                    return;
+                }
+            }
+
+            const resultElement = document.getElementById("result");
+            resultElement.innerText = `Converted Amount: ${result} ${convertTo === "nepali" ? "Nepali Rupees" : "IC"}`;
+            resultElement.classList.add("text-green-500");
+            resultElement.classList.remove("text-gray-800");
+            resultElement.classList.remove("hidden");
+        }
+function hideConverter() {
+            const converter = document.getElementById("converter");
+            converter.classList.add("hidden");
+            setTimeout(() => {
+                converter.classList.remove("hidden");
+            }, 30000);
+        }
+
+
+
+
+
+
+    document.getElementById('atmButton').addEventListener('click', function() {
+            document.getElementById('atmTable').classList.remove('hidden');
+            document.getElementById('loginForm').classList.add('hidden');
+            document.getElementById('dropdownMenu').classList.add('hidden');
+            document.getElementById('festivalSection').classList.add('hidden');
+            document.getElementById('developerSection').classList.add('hidden');
+            document.getElementById('socialMediaIcons').classList.add('hidden');
+        });
+
+        document.getElementById('closeTable').addEventListener('click', function() {
+            document.getElementById('atmTable').classList.add('hidden');
+        });
+
+        document.getElementById('othersButton').addEventListener('click', function(event) {
+            event.stopPropagation();
+            document.getElementById('dropdownMenu').classList.toggle('hidden');
+            document.getElementById('atmTable').classList.add('hidden');
+            document.getElementById('loginForm').classList.add('hidden');
+            document.getElementById('festivalSection').classList.add('hidden');
+            document.getElementById('developerSection').classList.add('hidden');
+            document.getElementById('socialMediaIcons').classList.add('hidden');
+        });
+
+        document.addEventListener('click', function(event) {
+            const dropdownMenu = document.getElementById('dropdownMenu');
+            const othersButton = document.getElementById('othersButton');
+            if (!dropdownMenu.classList.contains('hidden') && !othersButton.contains(event.target)) {
+                dropdownMenu.classList.add('hidden');
+            }
+        });
+
+        document.getElementById('followUsLink').addEventListener('click', function(event) {
+            event.preventDefault();
+            document.getElementById('dropdownMenu').classList.add('hidden');
+            document.getElementById('socialMediaIcons').classList.remove('hidden');
+        });
+
+        document.getElementById('loginLink').addEventListener('click', function(event) {
+            event.preventDefault();
+            document.getElementById('dropdownMenu').classList.add('hidden');
+            document.getElementById('loginForm').classList.remove('hidden');
+            document.getElementById('atmTable').classList.add('hidden');
+            document.getElementById('festivalSection').classList.add('hidden');
+            document.getElementById('developerSection').classList.add('hidden');
+            document.getElementById('socialMediaIcons').classList.add('hidden');
+        });
+
+        document.getElementById('festivalLink').addEventListener('click', function(event) {
+            event.preventDefault();
+            document.getElementById('dropdownMenu').classList.add('hidden');
+            document.getElementById('festivalSection').classList.remove('hidden');
+            document.getElementById('loginForm').classList.add('hidden');
+            document.getElementById('atmTable').classList.add('hidden');
+            document.getElementById('developerSection').classList.add('hidden');
+            document.getElementById('socialMediaIcons').classList.add('hidden');
+        });
+
+        document.getElementById('developerLink').addEventListener('click', function(event) {
+            event.preventDefault();
+            document.getElementById('dropdownMenu').classList.add('hidden');
+            document.getElementById('developerSection').classList.remove('hidden');
+            document.getElementById('loginForm').classList.add('hidden');
+            document.getElementById('atmTable').classList.add('hidden');
+            document.getElementById('festivalSection').classList.add('hidden');
+            document.getElementById('socialMediaIcons').classList.add('hidden');
+        });
+
+        document.getElementById('closeDeveloper').addEventListener('click', function() {
+            document.getElementById('aiText').style.display = 'none';
+        });
+
+        document.getElementById('closeFestival').addEventListener('click', function() {
+            document.getElementById('festivalSection').classList.add('hidden');
+        });
+
+        document.getElementById('loginFormElement').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('login success.');
+        });
+
+
+setInterval(() => {
+    if (window.console) {
+        window.console.log = function() {};
+        window.console.warn = function() {};
+        window.console.error = function() {};
+        window.console.dir = function() {};
+    }
+}, 1000);
+  </script>
+  </body>
+</html>
